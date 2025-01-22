@@ -121,34 +121,35 @@
     <script>
         // Function to update the booking date and time slot
         function updateDateTime() {
-            const now = new Date();
-            const bookingDateElement = document.getElementById('booking-date');
-            const bookingSlotElement = document.getElementById('booking-slot');
-
-            // Update the date
-            const options = { day: '2-digit', month: 'short', year: 'numeric' };
-            bookingDateElement.innerHTML = now.toLocaleDateString('en-GB', options);
-
-            // Update the time slot
-            let hour = now.getHours();
-            let minutes = now.getMinutes();
-
-            if (minutes > 45) {
-                hour = (hour + 1) % 24; // Move to the next hour, wrap around if 24
-            }
-
-            const startTime = new Date();
-            const endTime = new Date();
-
-            startTime.setHours(hour, 0, 0);
-            endTime.setHours((hour + 1) % 24, 0, 0); // End time is one hour later
-
-            const formatTime = (date) => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-            bookingSlotElement.innerHTML = `${formatTime(startTime)} to ${formatTime(endTime)}`;
+        const now = new Date();
+        const bookingDateElement = document.getElementById('booking-date');
+        const bookingSlotElement = document.getElementById('booking-slot');
+    
+        // Update the date
+        const options = { day: '2-digit', month: 'short', year: 'numeric' };
+        bookingDateElement.innerHTML = now.toLocaleDateString('en-GB', options);
+    
+        // Update the time slot
+        let hour = now.getHours();
+        let minutes = now.getMinutes();
+    
+        if (minutes > 45) {
+            hour = (hour + 1) % 24; // Move to the next hour, wrap around if 24
         }
+    
+        const startTime = new Date();
+        const endTime = new Date();
+    
+        startTime.setHours(hour, 0, 0);
+        endTime.setHours((hour + 1) % 24, 0, 0); // End time is one hour later
+    
+        const formatTime = (date) => date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+        bookingSlotElement.innerHTML = `<b style="color:#f00;">${formatTime(startTime)} to ${formatTime(endTime)}</b>`;
+    }
+    
+    // Call the function to set the initial values
+    updateDateTime();
 
-        // Call the function to set the initial values
-        updateDateTime();
     </script>
 </body>
 
