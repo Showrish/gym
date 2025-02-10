@@ -1,217 +1,220 @@
-
 <!DOCTYPE html>
-<html lang="">
-
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://gsports.gitam.edu/assets/css/bootstrap.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://gsports.gitam.edu/assets/font-awesome/css/font-awesome.min.css">
-
-	<title></title>
-	<style type="text/css">
-		body {
-			font-size: 14px;
-			font-family: "Trebuchet MS", sans-serif;
-			background: #e7e7e7;
-		}
-
-		#print-table {
-			margin: 0 auto;
-			width: 800px;
-			background: #fff;
-			padding: 20px;
-		}
-
-		table {
-			margin: 0 auto;
-		}
-
-		table th {
-			font-weight: bold;
-			text-align: left;
-			width: 25%;
-		}
-
-		table td {
-			/*text-align: center;*/
-			width: 75%;
-		}
-
-		table th,
-		table td {
-			/*padding: 5px;*/
-			/*border: 1px solid #ccc;*/
-		}
-
-		.user-img {
-			width: 75px;
-			/*		height: 50px;*/
-			/*		border-radius: 50%;*/
-		}
-
-		.head-title {
-			font-weight: 900;
-			margin: 20px 0;
-		}
-	</style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://gsports.gitam.edu/assets/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://gsports.gitam.edu/assets/font-awesome/css/font-awesome.min.css">
+  <title>Reservation Information</title>
+  <style type="text/css">
+    body {
+      font-size: 14px;
+      font-family: "Trebuchet MS", sans-serif;
+      background: #e7e7e7;
+    }
+    #print-table {
+      margin: 0 auto;
+      width: 800px;
+      background: #fff;
+      padding: 20px;
+    }
+    table {
+      margin: 0 auto;
+    }
+    table th {
+      font-weight: bold;
+      text-align: left;
+      width: 25%;
+    }
+    table td {
+      width: 75%;
+    }
+    .user-img {
+      width: 75px;
+    }
+    .head-title {
+      font-weight: 900;
+      margin: 20px 0;
+    }
+    td, th {
+      white-space: nowrap;
+    }
+  </style>
 </head>
-
 <body>
 
-	<div class="container-fluid">
-		<div class="row">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <div id="print-tables" class="panel panel-default">
+          <div class="panel-body" style="padding:50px" id="print-pdf">
+            <div>
+              <a href="javascript:window.history.back(0);"><i class="fa fa-arrow-left"></i> Back</a>
+            </div>
+            <br>
+            <div class="logo text-center">
+              <!-- <img src="https://gsports.gitam.edu/assets/images/GITAM_logo.png" class="gitam-logo-1" height="50"> -->
+              <img src="https://cdn.gitam.edu/images/logo/gitam-new-logo.png" class="gitam-logo-1" height="50">
+              <h2 class="head-title">Reservation information</h2>
+            </div>
+            <table class="m17 jb jb1 table table-bordered" style="width:100% !important">
+              <tbody>
+                <tr>
+                  <th>Ref. number</th>
+                  <td><b>20250207466272</b></td>
+                </tr>
+                <tr>
+                  <th>Stadium</th>
+                  <td>Fitness &amp; Performance Centre</td>
+                </tr>
+                <tr>
+                  <th>Playground</th>
+                  <td>Fitness & Performance Centre</td>
+                </tr>
+                <tr>
+                  <th>Court</th>
+                  <td>room 1</td>
+                </tr>
+                <tr>
+                  <th>Gym-goer(s) / Player</th>
+                  <td>
+                    <img src="https://doeresults.gitam.edu/photo/img.aspx?id=VU21CSEN0600005" class="user-img"/>
+                    SHOWRISH REDDY SAMPATH
+                  </td>
+                </tr>
+                <tr>
+                  <th>Department</th>
+                  <td>CSE</td>
+                </tr>
+                <tr>
+                  <th>Campus</th>
+                  <td>GIT, Visakhapatnam</td>
+                </tr>
+                <tr>
+                  <th>Mobile</th>
+                  <td>9440006167</td>
+                </tr>
+                <tr>
+                  <th>E-mail</th>
+                  <td>sshowris@gitam.in</td>
+                </tr>
+                <tr>
+                  <th>Booking date</th>
+                  <td>
+                    <!-- The span's content will be updated by JavaScript -->
+                    <b id="booking-date">Loading...</b>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Booking slot</th>
+                  <td>
+                    <!-- The span's content will be updated by JavaScript -->
+                    <b id="booking-slot" class="text-success">Loading...</b>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Amount</th>
+                  <td>FREE</td>
+                </tr>
+                <tr>
+                  <th>Status</th>
+                  <td><b class="text-success font-weight-bold">Approved</b></td>
+                </tr>
+                <tr>
+                  <th>Remarks</th>
+                  <td><b>Approved</b></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- <div style="text-align: center;" id="print-btn">
+            <button class="btn btn-primary" onClick='printpage();' type="button">Download</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
 
-			<div class="col-md-4 col-md-offset-4">
+  <!-- External scripts for PDF generation (if needed) -->
+  <script type="text/javascript" src="https://gsports.gitam.edu/assets/js/pdfmake.min.js"></script>
+  <script type="text/javascript" src="https://gsports.gitam.edu/assets/js/html2canvas.min.js"></script>
+  
+  <script>
+    // Function to format a number to two digits (e.g. 08)
+    function pad(number) {
+      return (number < 10 ? '0' : '') + number;
+    }
 
-				<div id="print-tables" class="panel panel-default">
-					<div class="panel-body" style="padding:50px" id="print-pdf">
-						<div class=""><a href="javascript:window.history.back(0);"><i class="fa fa-arrow-left"></i> Back</a></div><br>
-						<div class="logo text-center">
-							<!-- <img src="https://gsports.gitam.edu/assets/images/GITAM_logo.png" class="gitam-logo-1" height="50"> -->
-							<img src="https://cdn.gitam.edu/images/logo/gitam-new-logo.png" class="gitam-logo-1" height="50">
-							<h2 class="head-title">Reservation information</h2>
-						</div>
-						<table class="m17 jb jb1 table table-bordered" style="width:100% !important">
-							<tbody>
-								<tr>
-									<th>Ref. number</th>
-									<td>
-										<b>20250207466272</b>
-									</td>
-								</tr>
-								<tr>
-									<th>Stadium</th>
-									<td>
-										Fitness &amp; Performance Centre									</td>
-								</tr>
-								<tr>
-									<th>Playground</th>
-									<td>
-										Fitness & Performance Centre									</td>
-								</tr>
-								<tr>
-									<th>Court</th>
-									<td>
-										room 1									</td>
-								</tr>
-								<tr>
-									<th>Gym-goer(s) / Player</th>
-									<td>
-																				<img src='https://doeresults.gitam.edu/photo/img.aspx?id=VU21CSEN0600005' class='user-img'/> SHOWRISH REDDY SAMPATH									</td>
-								</tr>
-								<tr>
-									<th>Department</th>
-									<td>
-										CSE									</td>
-								</tr>
-								<tr>
-									<th>Campus</th>
-									<td>
-										GIT, Visakhapatnam									</td>
-								</tr>
-								<tr>
-									<th>Mobile</th>
-									<td>
-										9440006167									</td>
-								</tr>
-								<tr>
-									<th>E-mail</th>
-									<td>
-										sshowris@gitam.in									</td>
-								</tr>
-																<tr>
-									<th>Booking date</th>
-									<td>
-										<b>08-Feb-2025</b>
-									</td>
-								</tr>
-								<tr>
-									<th>Booking slot</th>
-									<td>
-										<b class="text-success">06:00 AM to 07:00 AM</b>
-									</td>
-								</tr>
+    // Function to format hours into "hh:00 AM/PM" format.
+    function formatHour(hour) {
+      hour = hour % 24; // Ensure the hour wraps around after 23
+      var suffix = hour >= 12 ? "PM" : "AM";
+      var displayHour = hour % 12;
+      if (displayHour === 0) {
+        displayHour = 12;
+      }
+      return pad(displayHour) + ":00 " + suffix;
+    }
 
-								<tr>
-									<th>Amount</th>
-									<td>FREE</td>
-								</tr>
+    // Update booking date and slot on page load
+    window.onload = function() {
+      var now = new Date();
 
-								<tr>
-									<th>Status</th>
-									<td>
-										<b><b class='text-success font-weight-bold'>Approved</b></b>									</td>
-								</tr>
-								<tr>
-									<th>Remarks</th>
-									<td>
-										<b>Approved</b>									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<!--					<div style="text-align: center;" id="print-btn"><button class="btn btn-primary" onClick='printpage();' type="button">Download</button></div>-->
-				</div>
-			</div>
-		</div>
-	</div>
+      // Format booking date as dd-MMM-yyyy
+      var day = pad(now.getDate());
+      var monthIndex = now.getMonth(); // 0-based index
+      var year = now.getFullYear();
+      var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      var formattedDate = day + "-" + monthNames[monthIndex] + "-" + year;
+      document.getElementById("booking-date").textContent = formattedDate;
 
-	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
-	<script type="text/javascript" src="https://gsports.gitam.edu/assets/js/pdfmake.min.js"></script>
-	<script type="text/javascript" src="https://gsports.gitam.edu/assets/js/html2canvas.min.js"></script>
-	<script type="text/javascript">
-		function printpage() {
+      // Determine booking slot hour.
+      // If the current minutes are 45 or more, use the next hour.
+      var currentHour = now.getHours();
+      var currentMinutes = now.getMinutes();
+      var bookingHour = (currentMinutes >= 45) ? currentHour + 1 : currentHour;
 
-			document.getElementById("print-btn").style.display = 'none';
-			var fileName = '20250207466272' + ".pdf";
-			html2canvas(document.getElementById('print-pdf'), {
-				onrendered: function(canvas) {
-					var data = canvas.toDataURL();
-					var docDefinition = {
-						content: [{
-							image: data,
-							width: 500,
-						}]
-					};
-					pdfMake.createPdf(docDefinition).download(fileName);
-				}
-			});
-		}
-	</script>
-	<style>
-		td {
-			white-space: nowrap;
-		}
+      // Format the start and end times.
+      var startTime = formatHour(bookingHour);
+      var endTime = formatHour(bookingHour + 1);
+      document.getElementById("booking-slot").textContent = startTime + " to " + endTime;
+    };
 
-		th {
-			white-space: nowrap;
-		}
-	</style>
+    // --- The printpage function and other scripts below remain unchanged ---
+    function printpage() {
+      document.getElementById("print-btn").style.display = 'none';
+      var fileName = '20250207466272' + ".pdf";
+      html2canvas(document.getElementById('print-pdf'), {
+        onrendered: function(canvas) {
+          var data = canvas.toDataURL();
+          var docDefinition = {
+            content: [{
+              image: data,
+              width: 500,
+            }]
+          };
+          pdfMake.createPdf(docDefinition).download(fileName);
+        }
+      });
+    }
 
-	
-	<script>
-		// Function to disable Shift and Ctrl keys
-		function disableShiftAndCtrlKeys(event) {
-			if (event.shiftKey || event.ctrlKey || event.key === "F12" || event.button === 2) {
-				event.preventDefault();
-			}
-		}
-
-		// Attach event listeners to intercept keydown events
-		document.addEventListener('keydown', disableShiftAndCtrlKeys);
-		document.addEventListener('mouseup', function(event) {
-			if (event.button === 2) {
-				event.preventDefault();
-			}
-		});
-
-		document.addEventListener('contextmenu', function(event) {
-			event.preventDefault();
-		});
-	</script>
+    // Disable certain keys and context menu options
+    function disableShiftAndCtrlKeys(event) {
+      if (event.shiftKey || event.ctrlKey || event.key === "F12" || event.button === 2) {
+        event.preventDefault();
+      }
+    }
+    document.addEventListener('keydown', disableShiftAndCtrlKeys);
+    document.addEventListener('mouseup', function(event) {
+      if (event.button === 2) {
+        event.preventDefault();
+      }
+    });
+    document.addEventListener('contextmenu', function(event) {
+      event.preventDefault();
+    });
+  </script>
+  
 </body>
-
 </html>
