@@ -137,7 +137,6 @@
 
   <!-- Blank Page for "Back" -->
   <div id="back-page" style="display:none; padding: 20px; background: #fff;">
-    <h2>Back Page</h2>
     <p>
 <!DOCTYPE html>
 <html lang="">
@@ -437,20 +436,19 @@
                                     <td>Fitness & Performance Centre</td>
                                     <td>Fitness & Performance Centre</td>
                                     <td>room 1</td>
-                                    <td>01-Mar-2025</td>
-                                    <td>06:00 AM to 07:00 AM</td>
+                                    <td id="first-date"></td>
+                                    <td id="first-time"></td>
                                     <td>Approved</td>
                                     <td>Approved</td>
                                     <td><a href="https://showrish.github.io/gym/"><i class="fa fa-eye text-info" aria-hidden="true"></i></a></td>
-
                                 </tr>
                                 <tr>
                                     <td>20250227820536</td>
                                     <td>Fitness & Performance Centre</td>
                                     <td>Fitness & Performance Centre</td>
                                     <td>room 1</td>
-                                    <td>28-Feb-2025</td>
-                                    <td>06:00 AM to 07:00 AM</td>
+                                    <td id="second-date"></td>
+                                    <td id="second-time"></td>
                                     <td>Approved</td>
                                     <td>Approved</td>
                                     <td><i class="fa fa-eye text-info" aria-hidden="true"></i></td>
@@ -466,92 +464,48 @@
                                     <td>Approved</td>
                                     <td><i class="fa fa-eye text-info" aria-hidden="true"></i></td>
                                 </tr>
-                                <tr>
-                                    <td>20250221789058</td>
-                                    <td>Fitness & Performance Centre</td>
-                                    <td>Fitness & Performance Centre</td>
-                                    <td>room 1</td>
-                                    <td>22-Feb-2025</td>
-                                    <td>06:00 AM to 07:00 AM</td>
-                                    <td>Approved</td>
-                                    <td>Approved</td>
-                                    <td><i class="fa fa-eye text-info" aria-hidden="true"></i></td>
-                                </tr>
-                                <tr>
-                                    <td>20250214385902</td>
-                                    <td>Fitness & Performance Centre</td>
-                                    <td>Fitness & Performance Centre</td>
-                                    <td>room 1</td>
-                                    <td>15-Feb-2025</td>
-                                    <td>06:00 AM to 07:00 AM</td>
-                                    <td>Approved</td>
-                                    <td>Approved</td>
-                                    <td><i class="fa fa-eye text-info" aria-hidden="true"></i></td>
-                                </tr>
-                                <tr>
-                                    <td>20250213655853</td>
-                                    <td>Fitness & Performance Centre</td>
-                                    <td>Fitness & Performance Centre</td>
-                                    <td>room 1</td>
-                                    <td>14-Feb-2025</td>
-                                    <td>06:00 AM to 07:00 AM</td>
-                                    <td>Approved</td>
-                                    <td>Approved</td>
-                                    <td><i class="fa fa-eye text-info" aria-hidden="true"></i></td>
-                                </tr>
-                                <tr>
-                                    <td>20250207466272</td>
-                                    <td>Fitness & Performance Centre</td>
-                                    <td>Fitness & Performance Centre</td>
-                                    <td>room 1</td>
-                                    <td>08-Feb-2025</td>
-                                    <td>06:00 AM to 07:00 AM</td>
-                                    <td>Approved</td>
-                                    <td>Approved</td>
-                                    <td><i class="fa fa-eye text-info" aria-hidden="true"></i></td>
-                                </tr>
-                                <tr>
-                                    <td>20250206217161</td>
-                                    <td>Fitness & Performance Centre</td>
-                                    <td>Fitness & Performance Centre</td>
-                                    <td>room 1</td>
-                                    <td>07-Feb-2025</td>
-                                    <td>06:00 AM to 07:00 AM</td>
-                                    <td>Approved</td>
-                                    <td>Approved</td>
-                                    <td><i class="fa fa-eye text-info" aria-hidden="true"></i></td>
-                                </tr>
-                                <tr>
-                                    <td>20250203083130</td>
-                                    <td>Fitness & Performance Centre</td>
-                                    <td>Fitness & Performance Centre</td>
-                                    <td>room 1</td>
-                                    <td>04-Feb-2025</td>
-                                    <td>06:00 AM to 07:00 AM</td>
-                                    <td>Approved</td>
-                                    <td>Approved</td>
-                                    <td><i class="fa fa-eye text-info" aria-hidden="true"></i></td>
-                                </tr>
-                                <tr>
-                                    <td>20250129753317</td>
-                                    <td>Fitness & Performance Centre</td>
-                                    <td>Fitness & Performance Centre</td>
-                                    <td>room 1</td>
-                                    <td>30-Jan-2025</td>
-                                    <td>06:00 AM to 07:00 AM</td>
-                                    <td>Approved</td>
-                                    <td>Approved</td>
-                                    <td><i class="fa fa-eye text-info" aria-hidden="true"></i></td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
-                    <!-- <div class="text-right"><sup>&#42;</sup><b>Note:</b> Y- Approved, W- Waiting for approval, N- Rejected</div> -->
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    function updateRow(dateId, timeId, offsetDays = 0) {
+        const dateElement = document.getElementById(dateId);
+        const timeElement = document.getElementById(timeId);
+
+        if (dateElement && timeElement) {
+            let now = new Date();
+            now.setDate(now.getDate() + offsetDays);
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+
+            // If 45 minutes have passed, increment the hour
+            let nextHour = minutes >= 45 ? hours + 1 : hours;
+            let nextNextHour = nextHour + 1;
+
+            // Format hours in 12-hour format with AM/PM
+            let formatTime = (hour) => {
+                let suffix = hour >= 12 ? "PM" : "AM";
+                let formattedHour = hour % 12 || 12;
+                return `${formattedHour}:00 ${suffix}`;
+            };
+
+            // Update the date and time slot
+            dateElement.textContent = now.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+            timeElement.textContent = `${formatTime(nextHour)} to ${formatTime(nextNextHour)}`;
+        }
+    }
+
+    updateRow("first-date", "first-time", 0); // First row: today
+    updateRow("second-date", "second-time", -1); // Second row: yesterday
+});
+</script>
 
 
 <!-- Cancellation form -->
